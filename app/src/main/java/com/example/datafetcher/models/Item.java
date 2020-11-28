@@ -1,4 +1,4 @@
-package com.example.datafetcher;
+package com.example.datafetcher.models;
 
 public class Item {
     private int id;
