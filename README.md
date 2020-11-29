@@ -1,6 +1,9 @@
 # DataFetcher
 
-## Description: Developed an Android Application in Java using the MVVM and Repository pattern to fetch data from an API endpoint.
+## Description: Developed an Android Application in Java using the MVVM and Repository pattern to fetch data from an API endpoint and perform the following operations on the data and then display the data in a human readable format. 
+## - Display all the items grouped by "listId"
+## - Sort the results first by "listId" then by "name" when displaying.
+## - Filter out any items where "name" is blank or null.
 
 ## Steps to run the project:
 1. Clone the repository using the following command: 
