@@ -49,6 +49,6 @@ From the project structure and this image we can see that this application follo
 ## Future improvements
 1. Could develop the application in kotlin.
 2. Could add sticky headers for the group items.
-3. Could add unit test cases for the retrofit api calls.
+
 
 
