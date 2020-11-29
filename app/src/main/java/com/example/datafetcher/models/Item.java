@@ -1,5 +1,8 @@
 package com.example.datafetcher.models;
 
+/**
+ * DataModel which stores the data obtained from api in its attributes
+ */
 public class Item {
     private int id;
     private int listId;

@@ -2,7 +2,6 @@ package com.example.datafetcher.repositories;
 
 import android.util.Log;
 
-import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
 import com.example.datafetcher.api.ItemApi;
@@ -15,6 +14,10 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
+
+/**
+ * Following the repository pattern, encapsulates the logic required to access the api
+ */
 public class ItemRepository {
 
     private static final String TAG = "ItemRepository.java";
@@ -23,6 +26,8 @@ public class ItemRepository {
     private final MutableLiveData<List<Item>> items;
 
     public ItemRepository(){
+
+        // Create an object of itemApi
         itemApi = new Retrofit.Builder()
                 .baseUrl(API_BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
@@ -33,6 +38,8 @@ public class ItemRepository {
     }
 
     public MutableLiveData<List<Item>> getItems(){
+
+        // Request the api for data and handle the response
         itemApi.getItems().enqueue(new Callback<List<Item>>() {
             @Override
             public void onResponse(Call<List<Item>> call, Response<List<Item>> response) {

@@ -10,12 +10,12 @@ import androidx.lifecycle.LiveData;
 import com.example.datafetcher.models.Item;
 import com.example.datafetcher.repositories.ItemRepository;
 
-import java.util.LinkedHashMap;
 import java.util.List;
 
+/**
+ * ViewModel which retrieves the necessary data from the DataModel and then exposes relevant data for the View to consume
+ */
 public class ItemViewModel extends AndroidViewModel {
-
-    LinkedHashMap<String, List<String>> itemsMap;
 
     private static final String TAG = "ItemViewModel.java";
     private LiveData<List<Item>> items;

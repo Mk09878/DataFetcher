@@ -28,7 +28,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity.java";
-    private ItemViewModel itemViewModel;
     private ExpandableListView expandableListView;
     private ExpandableListAdapter expandableListAdapter;
 
@@ -36,13 +35,23 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //Binding
         expandableListView = findViewById(R.id.expandableListView);
-        itemViewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(this.getApplication())).get(ItemViewModel.class);
+
+        ItemViewModel itemViewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(this.getApplication())).get(ItemViewModel.class);
+
+        // Observe the change in LiveData
         itemViewModel.getItems().observe(this, items -> {
+
+            // Process the data
             DataProcessing dataProcessing = new DataProcessing(items);
             TreeMap<String, List<String>> dataMap = dataProcessing.getDataMap();
+
+            // Create and set the expandableListAdapter
             expandableListAdapter = new CustomExpandableListAdapter(this, new ArrayList<>(dataMap.keySet()), dataMap);
             expandableListView.setAdapter(expandableListAdapter);
+
             for(Item item: items)
                 Log.i(TAG, "id: " + item.getId() + ", listid: " + item.getListId() + ", name: " + item.getName());
         });
