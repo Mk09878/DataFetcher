@@ -25,7 +25,6 @@ public class ItemViewModel extends AndroidViewModel {
         ItemRepository itemRepository = new ItemRepository();
         items = itemRepository.getItems();
         Log.i(TAG, String.valueOf(items.getValue()));
-
     }
 
     public LiveData<List<Item>> getItems(){

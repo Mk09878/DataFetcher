@@ -13,6 +13,9 @@ import com.example.datafetcher.R;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Acts as a bridge between an AdapterView and the underlying data for that view
+ */
 public class CustomExpandableListAdapter extends BaseExpandableListAdapter {
     private Context context;
     private List<String> expandableListTitle;
