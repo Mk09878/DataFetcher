@@ -41,6 +41,7 @@ public class ItemRepository {
                     return;
                 }
                 Log.i(TAG,"API call successful");
+
                 items.setValue(response.body());
             }
 
