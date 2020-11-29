@@ -12,19 +12,11 @@ import java.util.TreeMap;
 
 public class DataProcessing {
     private List<Item> items;
-    private Set<String> groupSet;
     private TreeMap<String, List<String>> dataMap;
 
     public DataProcessing(List<Item> items){
         this.items = items;
-        groupSet = new HashSet<>();
         dataMap = new TreeMap<>();
-    }
-
-    public Set<String> getGroupSet(){
-        for(Item item : items)
-            groupSet.add(String.valueOf(item.getListId()));
-        return groupSet;
     }
 
     public TreeMap<String, List<String>> getDataMap(){

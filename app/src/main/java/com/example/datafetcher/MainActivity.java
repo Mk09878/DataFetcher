@@ -17,6 +17,7 @@ import com.example.datafetcher.viewmodels.ItemViewModel;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.TreeMap;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -39,7 +40,8 @@ public class MainActivity extends AppCompatActivity {
         itemViewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(this.getApplication())).get(ItemViewModel.class);
         itemViewModel.getItems().observe(this, items -> {
             DataProcessing dataProcessing = new DataProcessing(items);
-            expandableListAdapter = new CustomExpandableListAdapter(this, new ArrayList<>(dataProcessing.getGroupSet()), dataProcessing.getDataMap());
+            TreeMap<String, List<String>> dataMap = dataProcessing.getDataMap();
+            expandableListAdapter = new CustomExpandableListAdapter(this, new ArrayList<>(dataMap.keySet()), dataMap);
             expandableListView.setAdapter(expandableListAdapter);
             for(Item item: items)
                 Log.i(TAG, "id: " + item.getId() + ", listid: " + item.getListId() + ", name: " + item.getName());

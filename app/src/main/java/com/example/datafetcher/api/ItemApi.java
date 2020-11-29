@@ -1,8 +1,5 @@
 package com.example.datafetcher.api;
 
-import androidx.lifecycle.LiveData;
-import androidx.lifecycle.MutableLiveData;
-
 import com.example.datafetcher.models.Item;
 
 import java.util.List;
