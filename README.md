@@ -34,6 +34,14 @@ Image Credits: https://developer.android.com/jetpack/guide
 From the project structure and this image we can see that this application follows this pattern with the exception of the ROOM section.
 
 ## Screenshots
+![](images/DataFetcherSS1.png)
+
+![](images/DataFetcherSS2.png)
+
+![](images/DataFetcherSS3.png)
+
+![](images/DataFetcherSS4.png)
+
 
 ## Future improvements
 1. Could develop the application in kotlin.
